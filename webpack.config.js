@@ -72,13 +72,19 @@ module.exports = {
       {
         test: /\.json$/,
         use: 'json-loader'
+      },
+      {
+        test: /\.html$/,
+        use: 'html-loader'
       }
     ]
   },
 
   plugins: [
     new ExtractTextPlugin('styles.css'),
-    new HtmlWebpackPlugin()
+    new HtmlWebpackPlugin({
+      template: './src/index.html'
+    })
   ],
 
   devServer: {
