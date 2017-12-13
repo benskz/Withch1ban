@@ -16,4 +16,4 @@ Even more complicated.
 ```
 npm run client
 ```
-and go to ```http://localhost:8080/```
+and go to ```http://localhost:8080/```. Run tests with ```npm run test```, will look for files ending in ```.test.js```.
