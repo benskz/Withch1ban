@@ -10,7 +10,7 @@
 <script>
   import axios from 'axios';
   import PostList from './components/post-list/Post-list.vue';
-  import PostForm from './components/Form.vue';
+  import PostForm from './components/form/Form.vue';
 
   export default {
     name: 'App',
