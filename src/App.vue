@@ -34,3 +34,8 @@
     }
   }
 </script>
+
+<style lang="scss">
+  @import "../node_modules/basscss/css/basscss";
+  @import "./scss/breakpoints";
+</style>
