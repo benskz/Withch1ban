@@ -7,28 +7,27 @@
 </template>
 
 <script>
+  import axios from 'axios';
   import PostList from './components/post-list/Post-list.vue';
 
   export default {
     name: 'App',
+
     components: {
       PostList
     },
-    data: () => {
+
+    data() {
       return {
-        posts: [
-          {
-            title: 'hello',
-            description: 'description1',
-            votes: 5000
-          },
-          {
-            title: 'Street Fighter',
-            description: 'description2',
-            votes: 100000
-          }
-        ]
+        posts: []
       }
+    },
+
+    created() {
+      axios.get('http://innovation-vote.whitbread.digital:8080/post')
+      .then(response => {
+        this.posts = response.data;
+      });
     }
   }
 </script>
