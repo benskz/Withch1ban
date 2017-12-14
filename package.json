@@ -41,6 +41,8 @@
   },
   "dependencies": {
     "axios": "^0.17.1",
+    "basscss-sass": "^4.0.0",
+    "sass-mq": "^3.3.2",
     "vue": "^2.5.10"
   }
 }

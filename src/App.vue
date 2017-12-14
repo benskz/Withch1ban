@@ -1,7 +1,8 @@
-<template>
-  <div id="app">
-    <h1>Hello Withch1ban!</h1>
 
+<template>
+  <div>
+    <h1>Innovation Portal</h1>
+    <PostForm />
     <PostList :posts="posts"/>
 </div>
 </template>
@@ -9,12 +10,14 @@
 <script>
   import axios from 'axios';
   import PostList from './components/post-list/Post-list.vue';
+  import PostForm from './components/Form.vue';
 
   export default {
     name: 'App',
 
     components: {
-      PostList
+      PostList,
+      PostForm
     },
 
     data() {
