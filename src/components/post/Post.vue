@@ -90,15 +90,6 @@ body{
   font-family: 'Arial';
 }
 
-@font-face {
-  font-family: 'PremierInn_Sans';
-  src: url('/fonts/PremierInnSansWeb-Regular.woff2') format('woff2'),
-       url('/fonts/PremierInnSansWeb-Regular.woff') format('woff'),
-       url('/fonts/PremierInnSansWeb-Regular.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-}
-
 .logo{
   width:150px;
   padding: 20px;

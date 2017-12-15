@@ -38,7 +38,7 @@
         },
         methods: {
             submit: function() {
-
+                
                 axios.post('http://innovation-vote.whitbread.digital:8080/post', this.post)
                 .then((response) => {
                     alert('Your post has been successful');
