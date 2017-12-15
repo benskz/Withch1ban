@@ -9,10 +9,7 @@
     <img class="brand-logo" src="../../img/logo-costa.png" />
 </div>
 <div v-else-if="brand === 'hub'">
-  HUB
-</div>
-<div v-else>
-  Not A/B/C
+  <img class="brand-logo" src="../../img/logo-hub.png" />
 </div>
 
   </div>
@@ -60,6 +57,11 @@ body{
 .post{
   float: left;
   font-family: 'Arial';
+
+    h2{
+    text-align: left;
+    margin-top: 0;
+  }
 }
 
 .post__logo{
@@ -79,12 +81,16 @@ body{
 
 .post__details-container{
   float: left;
+  padding: 0 20px;
+box-sizing: border-box;
 } 
 
 .post__votes-container{
   float: left;
   font-size: 18px;
   text-align: center;
+
+
 }
 
 .vote{
