@@ -17,6 +17,7 @@
 
 <script>
   import axios from 'axios';
+  import userId from './utils/user-id';
   import PostList from './components/post-list/Post-list.vue';
   import PostForm from './components/form/Form.vue';
 
@@ -35,7 +36,11 @@
     },
 
     created() {
-      axios.get('http://innovation-vote.whitbread.digital:8080/post')
+      axios.get('http://innovation-vote.whitbread.digital:8080/post', {
+        params: {
+          userId
+        }
+      })
       .then(response => {
         this.posts = response.data;
       });
