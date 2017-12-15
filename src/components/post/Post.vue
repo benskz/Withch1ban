@@ -54,6 +54,11 @@ body{
   font-style: normal;
 }
 
+.logo{
+  width:150px;
+  padding: 20px;
+}
+
 .post{
   float: left;
   font-family: 'Arial';
@@ -77,6 +82,7 @@ body{
 .post__list{
   background-color: #f7f7f7;
   float: left;
+  margin-top: 30px;
 }
 
 .post__details-container{
