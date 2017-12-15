@@ -1,22 +1,20 @@
 <template lang="html">
   <div class="post xs-col-12" :class="[brand ? brand : '']">
-  <div class="post__logo xs-col-2">
-
-<div v-if="brand === 'pi'">
-  <img class="brand-logo" src="../../img/logo-premierinn.png" />
-</div>
-<div v-else-if="brand === 'costa'">
-    <img class="brand-logo" src="../../img/logo-costa.png" />
-</div>
-<div v-else-if="brand === 'hub'">
-  <img class="brand-logo" src="../../img/logo-hub.png" />
-</div>
-
-  </div>
-  <div class="post__details-container xs-col-8">
-    <h2 class="post__title">{{title}}</h2>
-    <p class="post__description">{{description}}</p>
-  </div>
+    <div class="post__logo xs-col-2">
+      <div v-if="brand === 'pi'">
+        <img class="brand-logo" src="../../img/logo-premierinn.png" />
+      </div>
+      <div v-else-if="brand === 'costa'">
+        <img class="brand-logo" src="../../img/logo-costa.png" />
+      </div>
+      <div v-else-if="brand === 'hub'">
+        <img class="brand-logo" src="../../img/logo-hub.png" />
+      </div>
+    </div>
+    <div class="post__details-container xs-col-8">
+      <h2 class="post__title">{{title}}</h2>
+      <p class="post__description">{{description}}</p>
+    </div>
     <div class="post__votes-container xs-col-2">
       <span class="vote vote--up" @click="upvote(postId)"></span>
       <p class="post__votes">{{votes}}</p>

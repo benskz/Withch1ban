@@ -1,7 +1,5 @@
 <template lang="html">
 <div class="post__list xs-col-12">
-
-
     <div class="post-item xs-col-12" v-for="post in posts">
       <Post
         :title="post.title"
