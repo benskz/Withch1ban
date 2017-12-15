@@ -4,7 +4,7 @@
     
     <header class="wb-innovation-header">
       <section class="wb-innovation-container">
-        <h1>Whitbread</h1>
+        <img class="logo" src="./img/whitbread-logo.png" />
       </section>
     </header>
     
