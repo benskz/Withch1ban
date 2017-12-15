@@ -1,14 +1,24 @@
 <template lang="html">
-  <div class="post xs-col-12">
+  <div class="post xs-col-12" :class="[brand ? brand : '']"">
   <div class="post__logo xs-col-2">
-<img src="" alt="Icon" />
+
+<div v-if="brand === 'pi'">
+  <img class="brand-logo" src="../../img/logo-premierinn.png" />
+</div>
+<div v-else-if="brand === 'costa'">
+    <img class="brand-logo" src="../../img/logo-costa.png" />
+</div>
+<div v-else-if="brand === 'hub'">
+  HUB
+</div>
+<div v-else>
+  Not A/B/C
+</div>
+
   </div>
   <div class="post__details-container xs-col-8">
     <h2 class="post__title">{{title}}</h2>
     <p class="post__description">{{description}}</p>
-
-   {{ brand }}
-
   </div>
    <div class="post__votes-container xs-col-2"> 
     <div class="vote vote--up"></div>
@@ -94,5 +104,24 @@ text-align: center;
   background-image: url("../../img/sort-down.svg");
   fill: #ff0000;
 }
+
+.pi{
+  color: #511e62
+}
+
+.hub{
+  color: #bed600
+}
+
+.costa{
+  color: #5d301b
+}
+
+.brand-logo{
+  max-width: 100px;
+width: 100%;
+float: left;
+}
+
 
 </style>
