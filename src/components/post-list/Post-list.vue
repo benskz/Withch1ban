@@ -1,15 +1,15 @@
 <template lang="html">
-<div class="post__list">
+<div class="post__list xs-col-12">
 
-  <ul>
-    <li v-for="post in posts">
+
+    <div class="post-item xs-col-12" v-for="post in posts">
       <Post
         :title="post.title"
         :description="post.description"
         :votes="post.votes"
+        :brand="post.brand"
       />
-    </li>
-  </ul>
+    </div>
 </div>
 </template>
 
