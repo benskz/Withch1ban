@@ -3,7 +3,7 @@
     <h2>Welcome to the Whitbread innovation portal!</h2>
 
     <form class="wb-innovation-form" @submit.prevent="submit">
-        <select id="select" class="wb-innovation-form-selection" v-model="post.selected">
+        <select id="select" class="wb-innovation-form-selection" v-model="post.brand">
             <option value="" disabled selected>Brand</option>
             <option value="pi">Premier Inn</option>
             <option value="hub">Hub by Premier Inn</option>
@@ -30,7 +30,7 @@
         data() {
             return {
                 post: {
-                    selected: '',
+                    brand: '',
                     title: '',
                     description: ''
                 }
@@ -43,7 +43,7 @@
                 .then((response) => {
                     alert('Your post has been successful');
                 
-                    this.post.selected = '';
+                    this.post.brand = '';
                     this.post.title = '';
                     this.post.description = '';
                     
