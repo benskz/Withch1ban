@@ -14,11 +14,9 @@
 </template>
 
 <script>
-
 import Post from '../post/Post.vue';
 
 export default {
-
   name: 'Post-list',
   props: ['posts'],
   components: {

@@ -1,0 +1,31 @@
+.media {
+  display: block;
+  @include clearFix();
+  
+  // STYLING FOR THE DEMO
+  padding: 15px 20px;
+  border-bottom: 1px dotted #555;
+}
+
+.media__img {
+  float:left;
+	display:block;
+	margin-right:10px;
+  
+  // STYLING FOR THE DEMO
+  > img {
+    background-color: #fff;
+    border-radius: 50%;
+    height: 60px;
+  }
+}
+
+.media__img-reverse {
+  @extend .media__img;
+  float: right;
+}
+
+.media__body {
+  overflow:hidden;
+	margin-bottom:0;
+}

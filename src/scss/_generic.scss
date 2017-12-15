@@ -1,0 +1,28 @@
+ul li{
+    list-style:none;
+}
+
+
+body {
+    background-color: $bg-primary;
+    font-family: 'Montserrat', sans-serif;
+  }
+	
+    .wb-innovation-container{
+        max-width:$container-width;
+        margin:auto;
+    }
+
+	.wb-innovation-header{
+	background: $bg-header-primary;
+    border-bottom: solid 1px $bg-header-primary;
+    padding: $gap-primary - 5px;
+    color: white;
+	}
+    
+
+.wb-innovation-portal-post-list{
+    > h2{
+        text-align:center;
+    }
+}

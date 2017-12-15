@@ -1,0 +1,138 @@
+  .wb-innovation-form{
+  text-align:center;
+  @include clearFix();
+     @include mq($from: tablet) {
+        text-align:left;
+    }
+  }
+
+  h1 {
+    text-align: center;
+    font-style: bold;
+  }
+
+  #select {
+    font-style: italic;
+  }
+
+  #title {
+    @include appearance(none);
+    font-style: italic;
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0.1), inset 0 0 10px rgba(0, 0, 0, 0.07); 
+    border: 1px solid $border-primary;
+
+  }
+
+
+.wb-innovation-form-selection {
+    background: white;
+    overflow: hidden;
+    border: 1px solid $border-primary;
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0.1), inset 0 0 10px rgba(0, 0, 0, 0.07);
+
+    &:focus,
+    &:hover {
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    }
+
+    &:after {
+        content: '▾';
+        position: absolute;
+        top: 0;
+        right: 12px;
+        z-index: 1;
+        color: #bbbbbb;
+        line-height: 40px;
+        font-size: 14px;
+
+        .ie & {
+            display: none;
+        }
+    }
+}
+
+select {
+    @include appearance(none);
+    
+    position: relative;
+    background: transparent;
+    background-image: none;
+    width: 100%;
+    outline: none;
+    color: $color-inputs;
+    cursor: pointer;
+    z-index: 2;
+    border: none;
+    padding: $gap-primary $gap-primary $gap-primary $gap-primary - 5px;
+    // This is so hacky.. (for Firefox)
+    // Removes the default select arrow.
+    text-overflow: '';
+    text-indent: 5px;
+    // End of brutal hack
+
+    &[multiple=multiple] {
+        height: auto;
+        border: 1px solid $border-primary;
+        box-shadow: 0 0 1px rgba(0, 0, 0, 0.1), inset 0 0 10px rgba(0, 0, 0, 0.07);
+
+        
+
+        &:hover {
+            border-color: #cccccc;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+        }
+    }
+
+    option[disabled] {
+        color: $color-disabled;
+        text-shadow: none;
+        border: none;
+    }
+}
+
+select:-moz-focusring {
+    color: transparent;
+    text-shadow: 0 0 0 #888888;
+}
+
+select::-ms-expand {
+    display: none;
+}
+
+  #description{
+    resize: none;
+    min-height: 10rem;
+    @include appearance(none);
+    @include font-size(20px);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0.1), inset 0 0 10px rgba(0, 0, 0, 0.07); 
+    border: 1px solid $border-primary;
+  }
+
+  #select, #title, #description{
+    padding:$gap-primary;
+    margin-bottom:$gap-primary;
+    width: 100%;
+    border-radius: 3px;
+  }
+
+  #submitButton, #cancelButton {
+    margin: auto;
+    display: inline;
+    padding: 0.5rem 2rem;
+    background-color: grey;
+    color: white;
+    border: none;
+  }
+
+  br {
+   display: block;
+   margin: 3px 0;
+  }
+
+  p {
+    margin-bottom: 0;
+  }
+
+  :not(h1) {
+    @include font-size(20px);
+  }
