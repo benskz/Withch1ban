@@ -8,6 +8,9 @@
         :description="post.description"
         :votes="post.votes"
         :brand="post.brand"
+        :postId="post._id"
+        @voteUp="post.votes += 1"
+        @voteDown="post.votes -= 1"
       />
     </div>
 </div>

@@ -1,5 +1,5 @@
 <template lang="html">
-  <div class="post xs-col-12" :class="[brand ? brand : '']"">
+  <div class="post xs-col-12" :class="[brand ? brand : '']">
   <div class="post__logo xs-col-2">
 
 <div v-if="brand === 'pi'">
@@ -17,25 +17,58 @@
     <h2 class="post__title">{{title}}</h2>
     <p class="post__description">{{description}}</p>
   </div>
-   <div class="post__votes-container xs-col-2"> 
-    <div class="vote vote--up"></div>
-
-    <p class="post__votes">{{votes}}</p>    
-
-        <div class="vote vote--down"></div>
+    <div class="post__votes-container xs-col-2">
+      <span class="vote vote--up" @click="upvote()"></span>
+      <p class="post__votes">{{votes}}</p>
+      <span class="vote vote--down" @click="downvote()"></span>
     </div>
   </div>
 </template>
 
 <script>
+import axios from 'axios';
+import userId from '../../utils/user-id';
+
 export default {
   name: 'Post',
+
   props: [
     'title',
     'description',
     'votes',
-    'brand'
-  ]
+    'brand',
+    'postId'
+  ],
+
+  methods: {
+    upvote() {
+      axios.post('http://innovation-vote.whitbread.digital:8080/vote', {
+        userId,
+        postId: this.postId,
+        vote: 'up'
+      })
+      .then((response) => {
+          this.$emit('voteUp')
+      })
+      .catch(function (error) {
+          console.log(error.message);
+      })
+    },
+
+    downvote() {
+      axios.post('http://innovation-vote.whitbread.digital:8080/vote', {
+        userId,
+        postId: this.postId,
+        vote: 'down'
+      })
+      .then((response) => {
+          this.$emit('voteDown')
+      })
+      .catch(function (error) {
+          console.log(error.message);
+      })
+    }
+  }
 }
 </script>
 
@@ -89,7 +122,7 @@ body{
   float: left;
   padding: 0 20px;
 box-sizing: border-box;
-} 
+}
 
 .post__votes-container{
   float: left;
@@ -100,11 +133,12 @@ box-sizing: border-box;
 }
 
 .vote{
-width: 40px;
-height: 30px;
-background-size: 100%;
-display: inline-block;
-text-align: center;
+  width: 40px;
+  height: 30px;
+  background-size: 100%;
+  display: inline-block;
+  text-align: center;
+  cursor: pointer;
 }
 
 .vote--up {
