@@ -8,7 +8,6 @@
             <option value="pi">Premier Inn</option>
             <option value="hub">Hub by Premier Inn</option>
             <option value="costa">Costa</option>
-            <option value="restaurants">Restaurants</option>
         </select>
         <br />
         <input v-model="post.title" id="title" placeholder="What is your idea?" required></input>
