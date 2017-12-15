@@ -1,20 +1,26 @@
 <template>
-  <div>
-    <h1>Have an idea?</h1>
-    <form @submit.prevent="submit">
-        <h2> Who is this idea for?</h2>
-        <select v-model="post.selected">
-            <option disabled value="">Please select one</option>
+  <section class='wb-innovation-form-copy'>
+    <h2>Welcome to the Whitbread innovation portal!</h2>
+
+    <form class="wb-innovation-form" @submit.prevent="submit">
+        <select id="select" class="wb-innovation-form-selection" v-model="post.selected">
+            <option value="" disabled selected>Brand</option>
             <option value="pi">Premier Inn</option>
             <option value="hub">Hub by Premier Inn</option>
             <option value="costa">Costa</option>
             <option value="restaurants">Restaurants</option>
         </select>
-        <input v-model="post.title" id="title" placeholder="What is your idea?"></input>
-        <textarea v-model="post.description" id='description' placeholder="Describe your idea in 130 characters"></textarea>   
-        <button type="submit">Submit</button>
+        <br />
+        <input v-model="post.title" id="title" placeholder="What is your idea?" required></input>
+        <br />
+        <textarea v-model="post.description" id="description" placeholder="Describe your idea in 130 characters"></textarea>   
+        <br />
+        <div style="text-align:center">
+            <button type="submit" id='cancelButton'>Cancel</button>
+            <button type="submit" id='submitButton'>Submit</button>
+        </div>
     </form>
-  </div>
+  </section>
 </template>
 
 <script>
@@ -49,3 +55,4 @@
         }
     } 
 </script>
+
