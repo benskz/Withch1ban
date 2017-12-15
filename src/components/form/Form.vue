@@ -31,7 +31,7 @@
         data() {
             return {
                 post: {
-                    selected: '',
+                    brand: '',
                     title: '',
                     description: ''
                 }
@@ -44,7 +44,7 @@
                 .then((response) => {
                     alert('Your post has been successful');
                 
-                    this.post.selected = '';
+                    this.post.brand = '';
                     this.post.title = '';
                     this.post.description = '';
                     
