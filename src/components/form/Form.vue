@@ -3,7 +3,7 @@
     <h2>Welcome to the Whitbread innovation portal!</h2>
 
     <form class="wb-innovation-form" @submit.prevent="submit">
-        <select id="select" class="wb-innovation-form-selection" v-model="post.selected">
+        <select id="select" class="wb-innovation-form-selection" v-model="post.brand">
             <option value="" disabled selected>Brand</option>
             <option value="pi">Premier Inn</option>
             <option value="hub">Hub by Premier Inn</option>
