@@ -1,9 +1,17 @@
 
 <template>
   <div>
-    <h1>Innovation Portal</h1>
-    <PostForm />
-    <PostList :posts="posts"/>
+    
+    <header class="wb-innovation-header">
+      <section class="wb-innovation-container">
+        <h1>Whitbread</h1>
+      </section>
+    </header>
+    
+    <section class="wb-innovation-container">
+      <PostForm />
+        <PostList :posts="posts"/>
+    </section>
 </div>
 </template>
 
@@ -38,4 +46,11 @@
 <style lang="scss">
   @import "../node_modules/basscss/css/basscss";
   @import "./scss/breakpoints";
+  @import "./scss/vars";
+  @import "./scss/typography";
+  @import "./scss/generic";
+  @import "./scss/_normalize";
+  @import "./scss/tools";
+  @import "./scss/objects";
+  @import "./scss/form";
 </style>
