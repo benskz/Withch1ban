@@ -18,9 +18,9 @@
     <p class="post__description">{{description}}</p>
   </div>
     <div class="post__votes-container xs-col-2">
-      <span class="vote vote--up" @click="upvote()"></span>
+      <span class="vote vote--up" @click="upvote(postId)"></span>
       <p class="post__votes">{{votes}}</p>
-      <span class="vote vote--down" @click="downvote()"></span>
+      <span class="vote vote--down" @click="downvote(postId)"></span>
     </div>
   </div>
 </template>
@@ -40,29 +40,43 @@ export default {
     'postId'
   ],
 
+  data() {
+    return {
+      voteState: 'none'
+    }
+  },
+
   methods: {
-    upvote() {
+    upvote(postId) {
       axios.post('http://innovation-vote.whitbread.digital:8080/vote', {
         userId,
-        postId: this.postId,
+        postId,
         vote: 'up'
       })
       .then((response) => {
-          this.$emit('voteUp')
+          this.$emit('upvote', {
+            id: this.postId,
+            voteState: this.voteState
+          });
+          this.voteState = 'up';
       })
       .catch(function (error) {
           console.log(error.message);
       })
     },
 
-    downvote() {
+    downvote(postId) {
       axios.post('http://innovation-vote.whitbread.digital:8080/vote', {
         userId,
-        postId: this.postId,
+        postId,
         vote: 'down'
       })
       .then((response) => {
-          this.$emit('voteDown')
+          this.$emit('downvote', {
+            id: this.postId,
+            voteState: this.voteState
+          });
+          this.voteState = 'down';
       })
       .catch(function (error) {
           console.log(error.message);

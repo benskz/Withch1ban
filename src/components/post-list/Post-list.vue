@@ -9,8 +9,8 @@
         :votes="post.votes"
         :brand="post.brand"
         :postId="post._id"
-        @voteUp="post.votes += 1"
-        @voteDown="post.votes -= 1"
+        @upvote="upvote"
+        @downvote="downvote"
       />
     </div>
 </div>
@@ -21,9 +21,43 @@ import Post from '../post/Post.vue';
 
 export default {
   name: 'Post-list',
-  props: ['posts'],
+
   components: {
     Post
+  },
+
+  props: ['posts'],
+
+  methods: {
+    upvote(e) {
+      this.posts.forEach(post => {
+        if (post._id === e.id) {
+          switch (e.voteState) {
+            case 'none':
+              post.votes += 1;
+              break;
+            case 'down':
+              post.votes += 2;
+              break;
+          }
+        }
+      });
+    },
+
+    downvote(e) {
+      this.posts.forEach(post => {
+        if (post._id === e.id) {
+          switch (e.voteState) {
+            case 'none':
+              post.votes -= 1;
+              break;
+            case 'up':
+              post.votes -= 2;
+              break;
+          }
+        }
+      });
+    }
   }
 }
 </script>
